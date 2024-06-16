@@ -1,0 +1,23 @@
+window:
+  padding:
+    x: 5
+    y: 5
+  class:
+    instance: Alacritty
+    general: Alacritty
+  opacity: 1
+
+scrolling:
+  history: 5000
+  multiplier: 3
+
+font:
+  normal:
+    family: Hack Nerd Font
+    style:  Regular
+
+  size: 10
+
+
+import:
+  - ~/.config/alacritty/catppuccin-mocha.yml

@@ -1,0 +1,22 @@
+import = ["~/.config/alacritty/catpuccin-mocha.toml"]
+
+[window.padding]
+x = 2
+y = 2
+[window.class]
+instance = 'Alacritty'
+general = 'Alacritty'
+
+[scrolling]
+history = 5000
+multiplier = 3
+
+[font.normal]
+family = 'Hack Nerd Font'
+style = 'Regular'
+[font]
+size = 9
+
+[keyboard]
+# bindings = [{ key= "I", mods= "Control", chars= "\\x1b[105;6u" }]
+# bindings = [{ key= "H", mods= "Control", action= "None" }]

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+if [[ $# -eq 0 ]]; then
+    selected=$(find ~/NTNU/h23 ~/NTNU/v24 ~/NTNU/h24 -mindepth 1 -maxdepth 2 -type d | fzf)
+else
+    echo "Ikke implementert"
+fi
+
+if [[ -z $selected ]]; then
+    cd .
+else
+    cd $selected
+fi
+
