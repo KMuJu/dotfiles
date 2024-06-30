@@ -315,5 +315,5 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh &
 exec_always --no-startup-id feh --bg-fill ~/Bilder/TWoK.jpg &
 exec_always --no-startup-id xinput set-prop 9 324 1 && xinput set-prop 10 316 1 &
 # change language on keyboar
-exec_always --no-startup-id setxkbmap no
+exec_always --no-startup-id setxkbmap no &
 exec_always --no-startup-id xmodmap ~/.config/xmodmap/keykodes
