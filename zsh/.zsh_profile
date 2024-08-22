@@ -1,0 +1,34 @@
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias eww="~/apps/eww/target/release/eww"
+
+alias cpp="cd ~/Koding/cpp"
+alias i3conf="cd ~/.config/i3; nvim config"
+alias polybarconf="cd ~/.config/polybar; nvim config.ini"
+alias obsidian="cd ~/NTNU/h23/Obsidian/H23"
+alias nvimconf="cd ~/.config/nvim/;nvim"
+alias conkyS="cd ~/.config/conky/; ./launch.sh open Storage"
+
+# Studass
+alias itgk="cd ~/NTNU/Studass/TDT4109"
+alias objekt="cd ~/NTNU/Studass/TDT4100"
+
+# Fag
+alias matte4="cd ~/NTNU/h23/TMA4135"
+alias algdat="cd ~/NTNU/h23/TDT4120"
+alias statistikk="cd ~/NTNU/v24/TMA4245/"
+alias ade="cd ~/NTNU/v24/TTT4203/"
+alias bs="cd ~/NTNU/v24/Exphil/"
+alias database="cd ~/NTNU/v24/TDT4145/"
+alias introml="cd ~/NTNU/h24/TDT4172/"
+alias datamaskin="cd ~/NTNU/h24/TDT4160/"
+
+
