@@ -1,0 +1,19 @@
+* { 
+    all: unset;
+    // border: 1px solid red;
+}
+
+
+.layout {
+    background-color: #1d2021;
+    // min-width: 6rem;
+    border-radius: 0.5rem;
+    border: 1px solid #928374;
+    padding: 10px;
+}
+
+.name {
+  font-size: 1.4em;
+  font-weight: bold;
+  /* border-bottom: 1px solig #ebdbb2; */
+}
