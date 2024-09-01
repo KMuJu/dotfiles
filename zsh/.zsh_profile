@@ -18,7 +18,7 @@ alias nvimconf="cd ~/.config/nvim/;nvim"
 alias conkyS="cd ~/.config/conky/; ./launch.sh open Storage"
 
 # Studass
-alias itgk="cd ~/NTNU/Studass/TDT4109"
+alias itgk="cd ~/NTNU/Studass/TDT4110"
 alias objekt="cd ~/NTNU/Studass/TDT4100"
 
 # Fag
@@ -30,5 +30,6 @@ alias bs="cd ~/NTNU/v24/Exphil/"
 alias database="cd ~/NTNU/v24/TDT4145/"
 alias introml="cd ~/NTNU/h24/TDT4172/"
 alias datamaskin="cd ~/NTNU/h24/TDT4160/"
+alias indec="cd ~/NTNU/h24/IMT4204/"
 
 
