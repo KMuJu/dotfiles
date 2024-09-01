@@ -95,7 +95,8 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-source ~/.zsh_profile
+source ~/.config/zsh/env.zsh
+source ~/.config/zsh/alias.zsh
 bindkey -s "^O" "$HOME/.local/scripts/tmux-sessionizer\n"
 bindkey -s "^N" "$HOME/.local/scripts/tmux-sessionizer ~/.config/nvim\n"
 bindkey -s "^K" ". $HOME/.local/scripts/skole\n"
