@@ -1,3 +1,15 @@
+alias ls='ls --color=auto'
+alias ll='ls -l'
+alias la='ls -la'
+alias l='ls -lF'
+alias lh='ls -lh'
+alias lS='ls -1FS'
+alias lt='ls -lt'
+alias lr='ls -tr'
+alias ld='ls -ld'
+alias lA='ls -lA'
+alias llh='ls -lh'
+
 alias eww="~/apps/eww/target/release/eww"
 
 alias cpp="cd ~/Koding/cpp"
