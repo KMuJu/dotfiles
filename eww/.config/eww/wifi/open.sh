@@ -18,8 +18,6 @@ if [ -f "$RUNNING" ] && [ "$(cat "$RUNNING")" == "R" ]; then
     echo "" > "$RUNNING"
     echo "Closing" >> "$LOGFILE"
 else
-    MEETING=$(Meetings next -j)
-    echo "$MEETING" > "$LOGFILE"
     $EWW open wifi --config "$CONFIG" >> "$LOGFILE" 2>&1
     echo "R" > "$RUNNING"
     echo "Running" >> "$LOGFILE"

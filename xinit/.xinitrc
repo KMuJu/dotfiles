@@ -22,9 +22,10 @@ fi
 
 if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
+    echo "$usermodmap" > $HOME/usermodmap
 fi
 
-xmodmap ~/.config/xmodmap/keykodes
+xmodmap "$HOME/.config/xmodmap/keykodes" &
 
 # start some nice programs
 
@@ -35,7 +36,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-xmodmap -e 'keycode 108 = Hyper_R'
-xmodmap -e 'add mod2 = Hyper_R'
+# xmodmap -e 'keycode 108 = Hyper_R'
+# xmodmap -e 'add mod2 = Hyper_R'
 
 exec i3
