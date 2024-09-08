@@ -26,7 +26,7 @@ set $Mod Mod1
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
-exec_always --no-startup-id picom --config ~/.config/picom/picom.conf -b
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf -b --experimental-backends
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -233,6 +233,14 @@ bindsym $Mod+Shift+Left move left
 bindsym $Mod+Shift+Down move down
 bindsym $Mod+Shift+Up move up
 bindsym $Mod+Shift+Right move right
+
+# move focused window between monitors
+bindsym $mod+Shift+greater move container to output right
+bindsym $mod+Shift+less move container to output left
+
+# move focused workspace between monitors
+bindsym $mod+Ctrl+greater move workspace to output right
+bindsym $mod+Ctrl+less move workspace to output left
 
 # split in horizontal orientation
 bindsym $Mod+x split h
