@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
 if [[ $# -eq 0 ]]; then
-    selected=$(find ~/NTNU/h23 ~/NTNU/v24 ~/NTNU/h24 -mindepth 1 -maxdepth 2 -type d | fzf)
+    selected=$(
+    (fd --type d --min-depth 1 --max-depth 2 '' \
+        ~/NTNU/h23 ~/NTNU/v24 ~/NTNU/h24 ~/NTNU/Studass ~/NTNU/CTF) \
+    | fzf)
 else
     echo "Ikke implementert"
 fi

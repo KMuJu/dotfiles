@@ -4,12 +4,11 @@ if [[ $# -eq 1 ]]; then
     selected=$1
 else
     selected=$(
-      ( find ~/Projects/* ~/Projects ~/Programming ~/Programming/* \
-          -mindepth 1 -maxdepth 1 -type d
-        find ~/dotfiles \
-          -mindepth 3 -maxdepth 4 -type d) \
+      (fd --min-depth 1 --max-depth 2 --type d '' \
+          ~/Projects ~/Programming ~/NTNU/CTF
+        fd --min-depth 1 --max-depth 4 --type d '' \
+            ~/dotfiles) \
         | fzf)
-
 fi
 
 if [[ -z $selected ]]; then
