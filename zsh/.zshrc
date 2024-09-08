@@ -29,16 +29,15 @@ setopt share_history
 autoload -Uz select-word-style
 select-word-style bash
 
+# Get bash's compgen
+autoload -Uz compinit && compinit
+autoload -Uz bashcompinit && bashcompinit
+
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 # Add highlight enabled tab completion with colors
 zstyle ':completion:*' menu select
 eval "$(dircolors)"
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-
-# Get bash's compgen
-autoload -Uz compinit
-compinit
-autoload -Uz bashcompinit
-bashcompinit
 
 # Sourcing the different plugins I have in zsh
 source $HOME/.config/zsh/plugins.zsh

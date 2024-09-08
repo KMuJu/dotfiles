@@ -9,6 +9,8 @@ alias lr='ls -tr'
 alias ld='ls -ld'
 alias lA='ls -lA'
 alias llh='ls -lh'
+alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo'
+alias grep='grep --color=auto'
 
 alias eww="~/apps/eww/target/release/eww"
 
