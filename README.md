@@ -1,2 +1,2 @@
 # Usage
-stow <folder you should want to stow>
+stow <folder you want to stow>
