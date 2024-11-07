@@ -26,7 +26,7 @@ set $Mod Mod1
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
-exec_always --no-startup-id picom --config ~/.config/picom/picom.conf -b --experimental-backends
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -189,13 +189,13 @@ bindsym $Sup+n exec playerctl next
 bindsym $Sup+b exec playerctl previous
 bindsym $Sup+p exec playerctl play-pause
 
-# bindsym $Sup+Shift+n exec playerctl next -p spotify
-# bindsym $Sup+Shift+b exec playerctl previous -p spotify
-# bindsym $Sup+Shift+p exec playerctl play-pause -p spotify
+bindsym $Sup+Shift+n exec playerctl next -p spotify
+bindsym $Sup+Shift+b exec playerctl previous -p spotify
+bindsym $Sup+Shift+p exec playerctl play-pause -p spotify
 # Opens EWW when pausing and playing
-bindsym $Sup+Shift+n exec ~/.config/eww/music/open.sh next
-bindsym $Sup+Shift+b exec ~/.config/eww/music/open.sh previous
-bindsym $Sup+Shift+p exec ~/.config/eww/music/open.sh play-pause
+# bindsym $Sup+Shift+n exec ~/.config/eww/music/open.sh next
+# bindsym $Sup+Shift+b exec ~/.config/eww/music/open.sh previous
+# bindsym $Sup+Shift+p exec ~/.config/eww/music/open.sh play-pause
 
 ###
 # Open and close Music player
@@ -209,6 +209,7 @@ bindsym $Mod+m exec --no-startup-id ~/.config/eww/music/open.sh open
 ######################################################################
 ######################################################################
 #-------------------------#
+
 # Windows
 # change focus
 bindsym $Mod+$left focus left
@@ -313,9 +314,20 @@ bindsym $Mod+r mode "resize"
 #bar {
 #        status_command i3status
 #}
+for_window [window_role="About"] floating enable
+for_window [window_role="Organizer"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="page-info"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="toolbox"] floating enable
+for_window [window_role="webconsole"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
 
-default_border pixel 1
-default_floating_border pixel 1
+default_border pixel 2
+default_floating_border pixel 2
 
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
