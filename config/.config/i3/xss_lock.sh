@@ -1,2 +1,3 @@
-xset s 210 180
-xss-lock -n ~/.local/scripts/dim-screen2.sh -- (i3lock -n --image /tmp/bgblur.png > $HOME/locklog)
+#!/bin/bash
+xset s 300 240
+xss-lock -n ~/.local/scripts/dim-screen2.sh -- (i3lock -n --image ~/Bilder/bgblur.png > $HOME/locklog)
