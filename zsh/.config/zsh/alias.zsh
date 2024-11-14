@@ -9,8 +9,15 @@ alias lr='ls -tr'
 alias ld='ls -ld'
 alias lA='ls -lA'
 alias llh='ls -lh'
-alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo'
+# alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo'
+mkcd(){ mkdir -p "$1"; cd "$1" };
 alias grep='grep --color=auto'
+function mu(){
+    RES=$( udisksctl mount -b /dev/$1 | grep -oP '(?<=at )(.*)(?=\.)?' )
+    echo "Mounted /dev/$1 at $RES"
+    (cd $RES && exec zsh)
+    udisksctl unmount -b /dev/$1
+}
 
 alias eww="~/apps/eww/target/release/eww"
 
@@ -20,6 +27,8 @@ alias polybarconf="cd ~/.config/polybar; nvim config.ini"
 alias obsidian="cd ~/NTNU/h23/Obsidian/H23"
 alias nvimconf="cd ~/.config/nvim/;nvim"
 alias conkyS="cd ~/.config/conky/; ./launch.sh open Storage"
+alias pacman-fzf-remote="pacman -Slq | fzf --preview 'pacman -Si {}' --layout=reverse"
+alias pacman-fzf-local="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
 
 # Studass
 alias itgk="cd ~/NTNU/Studass/TDT4110"
