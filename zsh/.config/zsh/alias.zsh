@@ -49,4 +49,4 @@ alias indec="cd ~/NTNU/h24/IMT4204/"
 alias gs="git status"
 
 # Monitor
-alias launch=". ~/.local/scripts/add_left.sh"
+alias monitor=". ~/.local/scripts/add_left.sh"
