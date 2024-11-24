@@ -22,8 +22,8 @@ fi
 
 if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
-    echo "$usermodmap" > $HOME/usermodmap
 fi
+# echo "$usermodmap" > $HOME/usermodmap
 
 [[ -f ~/.config/xmodmap/keycodes ]] && xmodmap ~/.config/xmodmap/keycodes
 
