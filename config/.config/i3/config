@@ -336,4 +336,5 @@ exec_always --no-startup-id xinput set-prop 9 324 1 && xinput set-prop 10 316 1 
 # change language on keyboar
 exec_always --no-startup-id setxkbmap no &
 # exec_always --no-startup-id ~/.config/i3/xss_lock.sh &
-exec_always --no-startup-id xmodmap ~/.config/xmodmap/keykodes
+# exec_always --no-startup-id xmodmap ~/.config/xmodmap/keykodes
+exec_always --no-startup-id sh -c "sleep 1 && xmodmap ~/.config/xmodmap/keykodes > ~/.config/xmodmap/log 2>&1"
