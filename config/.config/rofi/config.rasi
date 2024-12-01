@@ -51,10 +51,10 @@ configuration {
 }
 
 window {
-    background-color:   @color0;
+    background-color:   @bg;
     border-color:       transparent;
 
-    width:      40%;
+    width:      30%;
     border:     0px;
     location:   center;
     anchor:     north;
@@ -74,7 +74,7 @@ inputbar {
 }
 
 entry {
-    placeholder: "Application to run";
+    placeholder: "App";
 }
 
 prompt, entry, element-text, element-icon {
