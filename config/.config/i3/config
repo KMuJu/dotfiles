@@ -209,7 +209,8 @@ bindsym $Sup+Shift+p exec playerctl play-pause -p spotify
 
 ###
 # Open and close Music player
-bindsym $Mod+m exec --no-startup-id ~/.config/eww/music/open.sh open
+bindsym $Mod+m exec --no-startup-id ~/.local/scripts/current_song.sh
+# bindsym $Mod+m exec --no-startup-id ~/.config/eww/music/open.sh open
 
 
 
