@@ -336,8 +336,11 @@ for_window [window_role="webconsole"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
 
-default_border pixel 2
-default_floating_border pixel 2
+default_border pixel 1
+default_floating_border pixel 1
+
+for_window [class="firefox"] border pixel 2
+for_window [class="Spotify"] move to workspace $ws10
 
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
@@ -347,4 +350,4 @@ exec_always --no-startup-id xinput set-prop 9 324 1 && xinput set-prop 10 316 1 
 exec_always --no-startup-id setxkbmap no &
 # exec_always --no-startup-id ~/.config/i3/xss_lock.sh &
 # exec_always --no-startup-id xmodmap ~/.config/xmodmap/keykodes
-exec_always --no-startup-id sh -c "sleep 1 && xmodmap ~/.config/xmodmap/keykodes > ~/.config/xmodmap/log 2>&1"
+exec_always --no-startup-id sh -c "sleep 1 && xmodmap ~/.config/xmodmap/keykodes"
