@@ -19,8 +19,8 @@ if xrandr --query | grep -q "^$SECONDARY_MONITOR connected"; then
     sleep 1
     # Relaunch polybar
     # source ~/.config/polybar/launch.sh
-    i3-msg restart
   fi
+  i3-msg restart
 else
   echo "Second monitor ($SECONDARY_MONITOR) is not connected."
 fi
