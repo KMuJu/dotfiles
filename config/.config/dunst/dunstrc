@@ -67,7 +67,7 @@
 	origin = top-right
 
 	# Offset from the origin
-	offset = 10x12
+	offset = 10x26
 
     # Turn on the progess bar. It appears when a progress hint is passed with
     # for example dunstify -h int:value:12
