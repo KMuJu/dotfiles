@@ -10,7 +10,7 @@ alias ld='ls -ld'
 alias lA='ls -lA'
 alias llh='ls -lh'
 # alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo'
-mkcd(){ mkdir -p "$1"; cd "$1" };
+function mkcd(){ mkdir -p "$1"; cd "$1" };
 alias grep='grep --color=auto'
 function mu(){
     RES=$( udisksctl mount -b /dev/$1 | grep -oP '(?<=at )(.*)(?=\.)?' )
