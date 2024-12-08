@@ -117,3 +117,5 @@ element-text {
     background-color: inherit;
     cursor: inherit;
 }
+
+// vim: ft=rasi
