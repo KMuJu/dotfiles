@@ -1,11 +1,23 @@
 // @theme "/usr/share/rofi/themes/gruvbox-dark-soft.rasi"
 
 configuration {
-  display-drun: "Applications:";
-  drun-display-format: "{icon} {name}";
-  font: "JetBrainsMono Nerd Font Medium 13";
-  show-icons: true;
-  modi: "drun";
+    display-drun: "Applications:";
+    drun-display-format: "{icon} {name}";
+    font: "JetBrainsMono Nerd Font Medium 13";
+    show-icons: true;
+    modi: "drun";
+
+    
+    
+    // Custom keybindings
+    kb-row-down: "Ctrl+j,Down";          // Move down with Ctrl+j or Down arrow
+    kb-row-up: "Ctrl+k,Up";              // Move up with Ctrl+k or Up arrow
+    kb-accept-entry: "Ctrl+space,Return"; // Confirm with Ctrl+Space or Return
+
+    // Remove conflicts
+    kb-row-select: "";                   // Unbind Ctrl+space (was used for multi-select)
+    kb-remove-to-eol: "";                // Unbind Ctrl+k (was used for clearing line)
+    kb-cancel: "Escape,Ctrl+g";
 }
 
 @theme "/dev/null"
@@ -21,6 +33,7 @@ configuration {
 
     bg:         #282828;
     bg0:        #1d2021;
+    bgdark:     #101112;
     fg0:        #fbf1c7;
     fg1:        #ebdbb2;
     fg3:        #bdae93;
@@ -38,38 +51,45 @@ configuration {
     aqua2:      #8ec07c;
     gray1:      #a89984;
     gray2:      #928374;
+    borderRadius:  20px;
+    borderColor:   #7dabd8;
 
 
-    background-color:   @bg;
+    background-color:   #1d2125;
     text-color:         @fg3;
     accent-color:       @color5;
 
     margin:     0px;
-    border:     0px;
+    border:     1px;
     padding:    0px;
     spacing:    0px;
 }
 
 window {
     background-color:   @bg;
-    border-color:       transparent;
 
     width:      30%;
     border:     0px;
     location:   center;
     anchor:     north;
     y-offset:   -25%;
+    border-radius: @borderRadius;
 }
 
 mainbox {
-    background-color: #ff0000;
+    // background-color: @bg;
     width: 100%;
     height: 100%;
+    border-radius: @borderRadius;
+    border-color: @borderColor;
+    border: 2px;
 }
 
 inputbar {
     padding:    10px 12px;
     spacing:    12px;
+    border: 0 0 2px 0;
+    border-color: @borderColor;
     children:   [ prompt, entry ];
 }
 
@@ -103,7 +123,7 @@ element {
 
 element selected {
     text-color: @fg0;
-    background-color: @bg0;
+    background-color: #272e35;
 }
 
 element-icon {
