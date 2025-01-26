@@ -1,6 +1,6 @@
 # Define your monitors
-PRIMARY_MONITOR="eDP-1"
-SECONDARY_MONITOR="HDMI-2"
+PRIMARY_MONITOR="eDP"
+SECONDARY_MONITOR=$1
 
 # Check if the secondary monitor is connected
 if xrandr --query | grep -q "^$SECONDARY_MONITOR connected"; then
