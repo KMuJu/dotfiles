@@ -10,14 +10,16 @@ configuration {
     
     
     // Custom keybindings
-    kb-row-down: "Ctrl+j,Down";          // Move down with Ctrl+j or Down arrow
-    kb-row-up: "Ctrl+k,Up";              // Move up with Ctrl+k or Up arrow
-    kb-accept-entry: "Ctrl+space,Return"; // Confirm with Ctrl+Space or Return
+    kb-row-down: "Control+j,Down";          // Move down with Control+j or Down arrow
+    kb-row-up: "Control+k,Up";              // Move up with Control+k or Up arrow
+    kb-accept-entry: "Control+space,Return"; // Confirm with Control+Space or Return
 
     // Remove conflicts
-    kb-row-select: "";                   // Unbind Ctrl+space (was used for multi-select)
-    kb-remove-to-eol: "";                // Unbind Ctrl+k (was used for clearing line)
-    kb-cancel: "Escape,Ctrl+g";
+    kb-row-select: "";                   // Unbind Control+space (was used for multi-select)
+    kb-remove-to-eol: "";                // Unbind Control+k (was used for clearing line)
+    kb-secondary-copy: "";               // Unbind Control+c (was used for copying text)
+
+    kb-cancel: "Escape,Control+g,Control+c";
 }
 
 @theme "/dev/null"
@@ -45,6 +47,7 @@ configuration {
     yellow2:    #fabd2f;
     blue1:      #458588;
     blue2:      #83a598;
+    blue3:      #7dabd8;
     purple1:    #b16286;
     purple2:    #d3869b;
     aqua1:      #689d6a;
@@ -52,7 +55,7 @@ configuration {
     gray1:      #a89984;
     gray2:      #928374;
     borderRadius:  20px;
-    borderColor:   #7dabd8;
+    borderColor:   @gray2;
 
 
     background-color:   #1d2125;
