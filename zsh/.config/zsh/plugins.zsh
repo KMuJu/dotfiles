@@ -36,8 +36,8 @@ if [ ! -d "$HOME/.config/zsh/plugins/zsh-history-substring-search" ]; then
     git clone https://github.com/zsh-users/zsh-history-substring-search.git $HOME/.config/zsh/plugins/zsh-history-substring-search
 fi
 
-source $HOME/.config/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+# source $HOME/.config/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # enabling up and down arrow keys to use the plugin
-bindkey "^[[A" history-substring-search-up
-bindkey "^[[B" history-substring-search-down
+# bindkey "^[[A" history-substring-search-up
+# bindkey "^[[B" history-substring-search-down

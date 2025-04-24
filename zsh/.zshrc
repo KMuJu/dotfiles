@@ -4,6 +4,8 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+# Sourcing the different plugins I have in zsh
+source $HOME/.config/zsh/plugins.zsh
 
 autoload -Uz compinit
 compinit
@@ -39,8 +41,6 @@ zstyle ':completion:*' menu select
 eval "$(dircolors)"
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-# Sourcing the different plugins I have in zsh
-source $HOME/.config/zsh/plugins.zsh
 
 # add binaries to $PATH
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/cuda/bin
@@ -50,7 +50,7 @@ export PATH=$PATH:$HOME/.local/bin
 
 source ~/.config/zsh/env.zsh
 source ~/.config/zsh/alias.zsh
-source ~/.config/zsh/git.plugin.zsh
+# source ~/.config/zsh/git.plugin.zsh
 
 bindkey -s "^O" "$HOME/.local/scripts/tmux-sessionizer\n"
 bindkey -s "^N" "$HOME/.local/scripts/tmux-sessionizer ~/.config/nvim\n"
@@ -64,6 +64,17 @@ bindkey "^[[1;5D" backward-word
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 bindkey "^[[3~" delete-char
+
+# bindkey "^[[A" history-beginning-search-backward
+# bindkey "^[[B" history-beginning-search-forward
+# Ensure up/down arrows search history based on input AND move cursor to the end
+autoload -U up-line-or-search
+autoload -U down-line-or-search
+
+# Bind Up Arrow to history search (moves cursor to end)
+bindkey "^[[A" up-line-or-search
+bindkey "^[[B" down-line-or-search
+
 
 # bash's command not found auto suggest
 command_not_found_handler () {
@@ -92,6 +103,15 @@ command_not_found_handler () {
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# SSH agent
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
+fi
+
+if [[ ! -S "$SSH_AUTH_SOCK" ]]; then
+    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+fi
 
 # opam configuration
 [[ ! -r /home/Kasper/.opam/opam-init/init.zsh ]] || source /home/Kasper/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
