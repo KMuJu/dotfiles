@@ -152,7 +152,9 @@ bindsym $Mod+Shift+0 move container to workspace $ws10
 #-------------------------#
 # Launch
 # start a terminal
-bindsym $Mod+Return exec kitty
+bindsym $Mod+Return exec ghostty
+# bindsym $Mod+Return exec kitty
+bindsym $Mod+Shift+Return exec ghostty
 
 #open brave
 bindsym $Mod+b exec firefox
@@ -342,6 +344,7 @@ for_window [window_type="menu"] floating enable
 default_border pixel 1
 default_floating_border pixel 1
 
+for_window [class="ghostty"] border pixel 1
 for_window [class="firefox"] border pixel 2
 for_window [class="Spotify"] move to workspace $ws10
 for_window [title="floating_kitty"] floating enable
