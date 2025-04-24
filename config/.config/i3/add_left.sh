@@ -1,0 +1,4 @@
+/usr/bin/xrandr --output HDMI-A-0 --auto --left-of eDP
+sleep 1
+/usr/bin/i3-msg restart
+/usr/bin/i3-msg 'move workspace to output left'

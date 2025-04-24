@@ -143,6 +143,9 @@ bindsym $Mod+Shift+8 move container to workspace number $ws8
 bindsym $Mod+Shift+9 move container to workspace number $ws9
 bindsym $Mod+Shift+0 move container to workspace $ws10
 
+# start screen on the left with hdmi
+bindsym $Mod+Shift+m exec "~/.config/i3/add_left.sh"
+
 ######################################################################
 ######################################################################
 ##############                 LAUNCH                  ###############
