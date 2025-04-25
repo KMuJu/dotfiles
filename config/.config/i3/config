@@ -164,7 +164,7 @@ bindsym $Mod+b exec firefox
 
 #open spotify
 bindsym $Mod+n exec spotify-launcher
-assign [class="spotify-launcher"] $ws2
+for_window [class="Spotify"] move to workspace $ws10
 
 
 #open gpick
@@ -175,12 +175,10 @@ bindsym $Mod+Shift+o exec obsidian
 
 #open slack
 bindsym $Mod+Shift+s exec slack
+for_window [class="slack"] move to workspace $ws8
 
 # kill focused window
 bindsym $Mod+q kill
-
-#open gwenview
-bindsym $Mod+Shift+g exec gwenview
 
 #lock screen
 bindsym $Sup+Shift+L exec i3lock -c 1f1f1f 
@@ -349,7 +347,6 @@ default_floating_border pixel 1
 
 for_window [class="ghostty"] border pixel 1
 for_window [class="firefox"] border pixel 2
-for_window [class="Spotify"] move to workspace $ws10
 for_window [title="floating_kitty"] floating enable
 
 
