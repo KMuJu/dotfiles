@@ -1,4 +1,5 @@
+echo "$(date): HDMI event triggered" >> /tmp/hdmi_log.txt
 /usr/bin/xrandr --output HDMI-A-0 --auto --left-of eDP
-sleep 1
+sleep 0.2
 /usr/bin/i3-msg restart
 /usr/bin/i3-msg 'move workspace to output left'
