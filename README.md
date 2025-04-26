@@ -1,6 +1,12 @@
 # Usage
 stow <folder you want to stow>
 
+# Additional files
+
+- /etc/udev/rules.d/99-hdmi-connect.rules
+  - Udev rule to run a script when a hdmi cable is connected
+  - Does not work
+
 # Issues
 
 ## General usage
