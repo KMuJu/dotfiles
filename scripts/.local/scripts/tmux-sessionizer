@@ -4,12 +4,15 @@ if [[ $# -eq 1 ]]; then
     selected=$1
 else
     selected=$(
-      (fd --min-depth 1 --max-depth 2 --type d '' \
-          ~/Projects ~/Programming ~/NTNU/CTF
+      (echo ~/dotfiles
+      fd --min-depth 1 --max-depth 2 --type d '' \
+          ~/NTNU/CTF
+      fd --min-depth 1 --max-depth 1 --type d '' \
+          ~/git
+      fd --min-depth 0 --max-depth 4 --type d '' \
+          ~/dotfiles/
       fd --min-depth 1 --max-depth 4 --type d '' \
-          ~/NTNU
-      fd --min-depth 1 --max-depth 4 --type d '' \
-          ~/dotfiles) \
+          ~/NTNU) \
         | fzf)
 fi
 
