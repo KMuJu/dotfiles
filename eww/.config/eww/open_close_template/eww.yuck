@@ -1,0 +1,21 @@
+(include "variables.yuck")
+
+(defwindow open_close
+  :stacking "fg"
+  :windowtype "dock"
+  :wm-ignore true
+  :geometry (geometry
+    :width "12%"
+    ;; :height "15%"
+    :anchor "left top"
+    :y "30px"
+    :x "10px")
+  (layout)
+)
+
+(defwidget layout []
+  (box :orientation "h"
+    :class "layout"
+    (label :text "heisann")
+  )
+)
