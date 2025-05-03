@@ -1,0 +1,23 @@
+(defvar sinks_json '[
+    {
+        "name": "analog",
+        "id": 48
+    },
+    {
+        "name": "headset l3",
+        "id": 79
+    }
+]')
+
+(defvar sink_widgets 
+  '(box :orientation "v"
+    (eventbox :cursor "pointer"
+      (button :onclick "wpctl set-default 48"
+      (label :text "analog")))
+    (eventbox :cursor "pointer"
+      (button :onclick "wpctl set-default 79"
+      (label :text "headset")))
+  )'
+)
+
+(defvar my_json "[1,2,3]")
