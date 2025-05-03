@@ -362,11 +362,11 @@
     default_icon = dialog-information
 
 [urgency_critical]
-    background = "#222222"
+    background = "#6a2222"
     foreground = "#ffffff"
     frame_color = "#d54e53"
 	highlight = "#d54e53, #f0f0f0"
-    timeout = 0
+    timeout = 6
     override_pause_level = 60
     # Icon for notifications with critical urgency
     default_icon = dialog-warning
@@ -407,6 +407,18 @@
 #    hide_text
 #    override_pause_level
 #
+
+[battery]
+    appname = *
+    category = battery
+    alignment = center
+    origin = center
+    background = "#6a2222"
+    foreground = "#ffffff"
+    frame_color = "#d54e53"
+    highlight = "#d54e53, #f0f0f0"
+
+
 # Shell-like globbing will get expanded.
 #
 # Instead of the appname filter, it's recommended to use the desktop_entry filter.
