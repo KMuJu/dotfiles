@@ -30,7 +30,6 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-alias eww="~/apps/eww/target/release/eww"
 
 alias cpp="cd ~/Koding/cpp"
 alias i3conf="cd ~/.config/i3; nvim config"
