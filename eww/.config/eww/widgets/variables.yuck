@@ -1,10 +1,2 @@
 (defvar sinks_json '[
-    {
-        "name": "analog",
-        "id": 48
-    },
-    {
-        "name": "headset l3",
-        "id": 79
-    }
 ]')
