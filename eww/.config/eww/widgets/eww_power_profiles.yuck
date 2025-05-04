@@ -1,0 +1,56 @@
+
+
+(defwindow power_profiles
+  :stacking "fg"
+  :windowtype "dock"
+  :wm-ignore true
+  :focusable true
+  :geometry (geometry
+    :width "170px"
+    :anchor "left top"
+    :y "30px"
+    :x "10px")
+  (power_layout)
+)
+
+
+(defwidget power_layout []
+  (box :orientation "v"
+    :class "layout"
+    :space-evenly false
+    (label :text "Power profiles" :class "power_profiles_title")
+    (box :height 3 :class "seperator")
+    (box :orientation "v" :vexpand true
+      (eventbox :cursor "pointer"
+        (button :onclick '~/.config/eww/widgets/scripts/power_profiles_onclick.sh performance'
+          :timeout 1000
+          (label :text "Performance"
+            :class "button_text"
+            :tooltip "performance"
+            :halign "start"
+          )
+        )
+      )
+      (eventbox :cursor "pointer"
+        (button :onclick '~/.config/eww/widgets/scripts/power_profiles_onclick.sh balanced'
+          :timeout 1000
+          (label :text "Balanced"
+            :class "button_text"
+            :tooltip "Balanced"
+            :halign "start"
+          )
+        )
+      )
+      (eventbox :cursor "pointer"
+        (button :onclick '~/.config/eww/widgets/scripts/power_profiles_onclick.sh power-saver'
+          :timeout 1000
+          (label :text "Power saver"
+            :class "button_text"
+            :tooltip "Power saver"
+            :halign "start"
+          )
+        )
+      )
+    )
+  )
+)

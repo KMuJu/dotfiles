@@ -1,0 +1,45 @@
+* {
+  all: unset;
+  // border: 1px solid red;
+  font-size: 20px;
+}
+
+
+.layout {
+  background-color: #50545C;
+  /* background-color: #1d2021; */
+  // min-width: 6rem;
+  border-radius: 0.5rem;
+  border: 0px solid #928374;
+  padding: 10px;
+}
+
+.title {
+  font-size: 1.4em;
+  font-weight: bold;
+  /* border-bottom: 1px solig #ebdbb2; */
+}
+
+.power_profiles_title {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.seperator {
+  background-color: rgb(50, 50, 50);
+}
+
+.wrap {
+  background-color: red;
+}
+
+button:hover {
+  background-color: red;
+  /* cursor: pointer; */
+}
+
+button {
+  margin: 2px 0px;
+  padding: 4px 10px;
+  border-radius: 0.5rem;
+}
