@@ -1,2 +1,4 @@
 (defvar sinks_json '[
 ]')
+
+(include "wifi/variables.yuck")

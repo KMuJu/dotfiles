@@ -1,0 +1,5 @@
+(defvar wifi_json '[
+  {"ssid": "Get-B4C2AC",  "display": "* 󰤟   Get-B4C2AC"},
+  {"ssid": "Testing",     "display": " 󰤢   Testing"},
+  {"ssid": "AsNimz",      "display": " 󰤨   AsNimz"}
+]')

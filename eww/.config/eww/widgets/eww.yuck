@@ -2,3 +2,4 @@
 ;; Audio sinks
 (include "eww_audio_sinks.yuck")
 (include "eww_power_profiles.yuck")
+(include "wifi/eww_wifi.yuck")
