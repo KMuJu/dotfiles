@@ -8,3 +8,4 @@ sinks=$($CONFIG/scripts/wpctl.py)
 
 eww update sinks_json="${sinks}" --config "$CONFIG" >> "$LOGFILE" 2>&1
 
+~/.config/eww/widgets/open_audio_sinks.sh

@@ -24,7 +24,7 @@
     (box :orientation "v" :vexpand true
       (for entry in sinks_json
         (eventbox :cursor "pointer"
-          (button :onclick '~/.config/eww/audio_control/scripts/on_click.sh "${entry?.id}"'
+          (button :onclick '~/.config/eww/audio_control/scripts/audio_sinks_on_click.sh "${entry?.id}"'
             :width 10
             (label :text "${entry?.name}"
               :class "button_text"

@@ -3,17 +3,19 @@
 import subprocess
 from json import loads, dumps
 
+selected = subprocess.run("pactl get-default-sink", shell=True, text=True, stdout=subprocess.PIPE).stdout.strip()
+
 command = 'pw-dump | jq \'.[] | select(.type == "PipeWire:Interface:Node" and .info.props."media.class" == "Audio/Sink")\' | jq -s'
 
 result = subprocess.run(command, shell=True, text=True, stdout=subprocess.PIPE).stdout
 
 result_json = loads(result)
-volume_symbol = ""
+volume_symbol = " "
 sinks = [
     {
         "id": sink["id"],
-        "name": (volume_symbol if sink["info"]["state"] == "running" else " ")
-        + "  "
+        "name": (volume_symbol if sink["info"]["props"]["node.name"] == selected else " ")
+        + "   "
         + (
             sink["info"]["props"]["node.nick"]
             if "node.nick" in sink["info"]["props"].keys()
