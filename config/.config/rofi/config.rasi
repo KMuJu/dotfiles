@@ -96,9 +96,9 @@ inputbar {
     children:   [ prompt, entry ];
 }
 
-entry {
-    placeholder: "App";
-}
+// entry {
+//     placeholder: "App";
+// }
 
 prompt, entry, element-text, element-icon {
     vertical-align: 0.5;
