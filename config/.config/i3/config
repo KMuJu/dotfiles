@@ -186,8 +186,9 @@ bindsym $Sup+Shift+L exec ~/.config/i3/lock.sh &
 # start dmenu (a program launcher)
 #bindsym $Mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
-bindsym $Mod+d exec "rofi -modi drun,run -show drun"
-bindsym $Mod+c exec rofi -show calc -modi calc -no-show-match -no-sort
+bindsym $Mod+d exec "~/.config/rofi/scripts/launcher_t2"
+bindsym $Mod+p exec "~/.config/rofi/scripts/powermenu_t1"
+bindsym $Mod+c exec rofi -show calc -modi calc -no-show-match -no-sort -theme ~/.config/rofi.Kasper/config.rasi
 bindsym $Mod+Tab exec --no-startup-id ~/.local/scripts/select_workspace.sh &
 
 
@@ -352,6 +353,7 @@ for_window [title="floating_kitty"] floating enable
 
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
+exec_always --no-startup-id betterlockscreen -u $(cat ~/.betterlock) &
 exec_always --no-startup-id ~/.config/i3/setbg.sh &
 exec_always --no-startup-id xinput set-prop 9 324 1 && xinput set-prop 10 316 1 &
 # change language on keyboar

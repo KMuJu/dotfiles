@@ -20,29 +20,40 @@
     (label :text "Wifi" :class "wifi_title")
     (box :height 3 :class "seperator")
     (box :orientation "v" :vexpand true
+      :space-evenly false
+      :height 10
       (for wifi_el in wifi_json
-        (eventbox :cursor "pointer"
-          (button :onclick '~/.config/eww/widgets/wifi/scripts/wifi_onclick.sh "${wifi_el?.ssid}" "${wifi_el?.checkbox}"'
-            :timeout 1000
-            (box :orientation "h"
-              :space-evenly false
-              (label :text "${wifi_el?.checkbox}"
-                :class "wifi_checkbox"
-                :width 30
-              )
-              (label :text "${wifi_el?.ssid}"
-                :class "button_text"
-                :tooltip "performance"
-                :halign "start"
-                :unindent false
-              )
-              (label :text "${wifi_el?.symbol}"
-                :class "wifi_symbol"
-                :halign "end"
-                :hexpand true
-              )
-            )
-          )
+        (wifi_entry 
+          :checkbox "${wifi_el?.checkbox}" 
+          :ssid "${wifi_el?.ssid}" 
+          :symbol "${wifi_el?.symbol}" 
+          :class {wifi_el?.checkbox=="*" ? "current" : ""}
+        )
+      )
+    )
+  )
+)
+
+(defwidget wifi_entry [checkbox ssid symbol class]
+  (eventbox :cursor "pointer"
+    (button :onclick '~/.config/eww/widgets/wifi/scripts/wifi_onclick.sh "${ssid}" "${checkbox}"'
+      :timeout 1000
+      :class class
+      (box :orientation "h"
+        :space-evenly false
+        (label :text "${checkbox}"
+          :class "wifi_checkbox"
+          :width 30
+        )
+        (label :text "${ssid}"
+          :class "button_text"
+          :halign "start"
+          :unindent false
+        )
+        (label :text "${symbol}"
+          :class "wifi_symbol"
+          :halign "end"
+          :hexpand true
         )
       )
     )

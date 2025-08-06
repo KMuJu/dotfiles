@@ -46,6 +46,18 @@ p=$percent
 
 while [ $(cat $playingPath) == 1 ]; do
     position=$(playerctl --player=spotify metadata -f '{{position}}')
+    _title=$(playerctl --player=spotify metadata -f "{{title}}")
+    if [[ $title != $_title ]] && [[ $_title != "" ]]; then
+        title=$_title
+        artist=$(playerctl --player=spotify metadata -f "{{artist}}")
+        artUrl=$(playerctl --player=spotify metadata -f "{{mpris:artUrl}}")
+        length=$(playerctl --player=spotify metadata -f "{{mpris:length}}")
+        if [[ $prevURL != $artUrl ]]; then
+            wget -O $songPath $artUrl
+            echo $artUrl > $prevUrlPath
+        fi
+        dunstify --close=$(cat $idPath)
+    fi
     if [ -n "$position" ] && [ -n "$length" ]; then
         # Perform the calculation to get the percentage
         percent=$(echo "scale=4; $position / $length * 100" | bc)

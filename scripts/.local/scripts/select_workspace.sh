@@ -12,7 +12,7 @@ workspaces=$(i3-msg -t get_tree | jq -r '
 
 # Show the list in fzf for selection
 # selected=$(echo "$workspaces" | fzf --prompt="Select a workspace: " --height=20% --border --reverse)
-selected=$(echo "$workspaces" | rofi -dmenu)
+selected=$(echo "$workspaces" | rofi -dmenu -theme ~/.config/rofi.Kasper/config.rasi)
 
 # Extract the workspace name (text before the colon) if something is selected
 if [ -n "$selected" ]; then

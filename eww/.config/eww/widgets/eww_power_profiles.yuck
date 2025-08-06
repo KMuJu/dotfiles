@@ -13,6 +13,7 @@
   (power_layout)
 )
 
+(defvar selected_profile "balanced")
 
 (defwidget power_layout []
   (box :orientation "v"
@@ -21,36 +22,41 @@
     (label :text "Power profiles" :class "power_profiles_title")
     (box :height 3 :class "seperator")
     (box :orientation "v" :vexpand true
-      (eventbox :cursor "pointer"
-        (button :onclick '~/.config/eww/widgets/scripts/power_profiles_onclick.sh performance'
-          :timeout 1000
-          (label :text "Performance"
-            :class "button_text"
-            :tooltip "performance"
-            :halign "start"
-          )
-        )
+      (profile
+        :label "Performance"
+        :name "performance"
       )
-      (eventbox :cursor "pointer"
-        (button :onclick '~/.config/eww/widgets/scripts/power_profiles_onclick.sh balanced'
-          :timeout 1000
-          (label :text "Balanced"
-            :class "button_text"
-            :tooltip "Balanced"
-            :halign "start"
-          )
-        )
+      (profile
+        :label "Balanced"
+        :name "balanced"
       )
-      (eventbox :cursor "pointer"
-        (button :onclick '~/.config/eww/widgets/scripts/power_profiles_onclick.sh power-saver'
-          :timeout 1000
-          (label :text "Power saver"
-            :class "button_text"
-            :tooltip "Power saver"
-            :halign "start"
-          )
-        )
+      (profile
+        :label "Power saver"
+        :name "power-saver"
       )
     )
   )
 )
+
+(defwidget profile [label name]
+  (profile_class
+    :label "${label}"
+    :name "${name}"
+    :class {name==selected_profile ? "current" : ""}
+  )
+) 
+
+(defwidget profile_class [label name class]
+  (eventbox :cursor "pointer"
+    (button :onclick '~/.config/eww/widgets/scripts/power_profiles_onclick.sh ${name}'
+      :timeout 1000
+      :class "${class}"
+      (label :text "${label}"
+        :class "button_text"
+        :tooltip "${label}"
+        :halign "start"
+      )
+    )
+  )
+)
+

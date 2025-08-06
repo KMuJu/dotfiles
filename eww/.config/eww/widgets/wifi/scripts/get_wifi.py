@@ -90,6 +90,7 @@ def get_ordered_networks():
                     "ssid": ssid,
                     "symbol": symbols[min(int(strength / 20), 4)],
                     # "display": f'{checkbox} {ssid} {symbols[int(strength / 20)]} ',
+                    "strength": strength
                     })
                 ssids.add(ssid)
             print(dumps(json))

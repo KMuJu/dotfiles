@@ -5,14 +5,9 @@ WIDGET="power_profiles"
 CONFIG="$HOME/.config/eww/widgets"
 LOGFILE="$HOME/.cache/eww/${WIDGET}_audio_control.log"
 source "$CONFIG/screen_utils.sh"
+source "$CONFIG/utils.sh"
 
-function log {
-    echo "$(date): $1" >> "$LOGFILE"
-    echo "$(date): $1"
-}
-
-log "Running script at $(date)"
-log "CONFIG: $CONFIG"
+log "Running $WIDGET script"
 
 # eww daemon --config "$CONFIG" >> "$LOGFILE" 2>&1
 

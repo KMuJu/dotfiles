@@ -10,8 +10,8 @@ stow <folder you want to stow>
 # Issues
 
 ## General usage
-- [ ] xidlehook will trigger after even after locking with i3lock
-- [ ] xidlehook will trigger even when in fullscreen
+- [x] xidlehook will trigger even after locking with i3lock
+- [x] xidlehook will trigger even when in fullscreen
 - [ ] Automaticly detect hdmi cable and move current workspace over
 - [ ] audio over hdmi
       if possible can start it when using the hdmi keybind
@@ -23,3 +23,4 @@ stow <folder you want to stow>
 ## Neovim
 - [ ] Neotest for java does not work for some projects
 - [ ] Rust analyzer does not give correct information
+- [x] Markdown mapping for checking checkbox

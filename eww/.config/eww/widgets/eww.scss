@@ -3,7 +3,7 @@
 * {
   all: unset;
   // border: 1px solid red;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 
@@ -29,6 +29,11 @@
 
 .seperator {
   background-color: rgb(50, 50, 50);
+}
+
+.current {
+  font-weight: bold;
+  background-color: rgba($color: #20242C, $alpha: 0.3);
 }
 
 .wrap {
