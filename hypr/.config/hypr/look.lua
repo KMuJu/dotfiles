@@ -1,6 +1,6 @@
-local gaps_in = 2
-local gaps_out = 3
-local rounding = 8
+local gaps_in = 1
+local gaps_out = 2
+local rounding = 0
 local border = 1
 
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/

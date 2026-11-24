@@ -60,3 +60,4 @@ alias gs="git status"
 
 # Monitor
 alias monitor=". ~/.local/scripts/add_left.sh"
+alias tree-f="fd --type f --hidden --exclude .git | tree --fromfile"

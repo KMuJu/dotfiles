@@ -24,13 +24,12 @@ hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind("SUPER + SHIFT + L", hl.dsp.exec_cmd(lock))
 
 -- Screenshots
-hl.bind(mainMod .. " + CTRL + less", hl.dsp.exec_cmd("~/.config/hypr/scripts/move_workspace.sh"))
 hl.bind("SHIFT + Print", hl.dsp.exec_cmd('grim -g "$(slurp -d)" - | wl-copy'))
 hl.bind(
-	"SHIFT + Print",
+	"CTRL + Print",
 	hl.dsp.exec_cmd('grim -g "$(slurp)" $(xdg-user-dir PICTURES)/screenshots/$(date +"%s_selection_grim.png")')
 )
-hl.bind("SHIFT + Print", hl.dsp.exec_cmd('grim $(xdg-user-dir PICTURES)/screenshots/$(date +"%s_grim.png")'))
+hl.bind("SHIFT + CTRL + Print", hl.dsp.exec_cmd('grim $(xdg-user-dir PICTURES)/screenshots/$(date +"%s_grim.png")'))
 
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
@@ -52,6 +51,18 @@ hl.bind(mainMod .. " + SHIFT + l", hl.dsp.window.move({ direction = "right" }))
 hl.bind(mainMod .. " + SHIFT + k", hl.dsp.window.move({ direction = "up" }))
 hl.bind(mainMod .. " + SHIFT + j", hl.dsp.window.move({ direction = "down" }))
 hl.bind(mainMod .. " + f", hl.dsp.window.fullscreen())
+hl.bind(mainMod .. " + CTRL + less", hl.dsp.exec_cmd("~/.config/hypr/scripts/move_workspace.sh"))
+
+-- Move active workspace to the monitor on the left/right
+local function move_workspace(direction)
+	loadfile(os.getenv("HOME") .. "/.config/hypr/scripts/move_workspace.lua")(direction)
+end
+hl.bind(mainMod .. " + CTRL + h", function()
+	move_workspace("left")
+end)
+hl.bind(mainMod .. " + CTRL + l", function()
+	move_workspace("right")
+end)
 
 for i = 1, 10 do
 	local key = i % 10 -- 10 maps to key 0
